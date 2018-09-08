@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+  </head>
+  <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '552450065186462',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v3.1'
+        });
+      };
+    
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+    </script>
+
+    <div id="modal-login">
+      <p>Welcome to HacktivGit</p>
+      <fb:login-button scope="public_profile,email" data-size="large" onlogin="checkLoginState();">
+      </fb:login-button>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="#">HacktivGit</a>
+            <div class="navbar-right">
+              <img src="https://via.placeholder.com/50x50" />
+              <p>dmtrxw</p>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="row row-body ">
+        <div class="col-md-3 box">
+          <h4>Users</h4>
+          <ul style="list-style-type:none" id="userlist">
+          </ul>
+        </div>
+        <div class="col-md-3 box">
+          <input class="search" type="text" placeholder="Search...">
+          <button type="button" value="Submit">Submit</button>
+          <div class="list" id="repolist">
+          </div> 
+        </div>
+
+        <div class="col-md-6 box" id="detail">
+        </div>
+      </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="oauth.js"></script>
+    <script src="checkLogin.js"></script>
+  </body>
+</html>
